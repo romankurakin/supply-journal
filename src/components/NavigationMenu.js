@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, Header } from "semantic-ui-react";
+import { Menu, Header, Button, Icon } from "semantic-ui-react";
 import { Link } from "@reach/router";
 
 const isActive = ({ isCurrent }) => {
@@ -24,6 +24,18 @@ export const NavigationMenu = () => {
         <Menu.Item as={ExactNavLink} to="/replenishment">
           <Header size="small">Репленишмент</Header>
         </Menu.Item>
+        <Menu.Menu position="right">
+          <Menu.Item>
+            <Button basic>
+              <Icon name="user" />
+              Владимир Конев
+            </Button>
+            <Button>
+              <Icon name="sign-out" />
+              Выйти
+            </Button>
+          </Menu.Item>
+        </Menu.Menu>
       </Menu>
     </header>
   );
