@@ -4,7 +4,7 @@ import { Todo } from "./Todo";
 
 const Lol = () => <div>lol</div>;
 
-// При утяжеление станиц здесь стоит сделать ленивую загрузку.
+// При утяжелении станиц здесь стоит сделать ленивую загрузку.
 export function AppRouter() {
   return (
     <div className="App">
