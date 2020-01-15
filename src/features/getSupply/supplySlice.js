@@ -15,8 +15,8 @@ const supply = createSlice({
       state.isLoading = true;
     },
     getSupplySuccess(state, { payload }) {
+      state.supply = payload;
       state.isLoading = false;
-      state.error = null;
     },
     getSupplyFailed(state, { payload }) {
       state.isLoading = false;
@@ -39,6 +39,6 @@ export const fetchSupply = () => async dispatch => {
     const supply = await getSupply();
     dispatch(getSupplySuccess(supply));
   } catch (error) {
-    dispatch(getSupplyFailed(error));
+    dispatch(getSupplyFailed(error.toString()));
   }
 };
