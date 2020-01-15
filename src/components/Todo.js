@@ -3,7 +3,7 @@ import React from "react";
 export const Todo = () => {
   return (
     <div
-      class="wrapper"
+      className="wrapper"
       style={{
         display: "flex",
         alignItems: "center",
@@ -22,9 +22,9 @@ export const Todo = () => {
         <g
           id="Group-3"
           stroke="none"
-          stroke-width="1"
+          strokeWidth="1"
           fill="none"
-          fill-rule="evenodd"
+          fillRule="evenodd"
           transform="translate(13.000000, 0.000000)"
         >
           <polygon

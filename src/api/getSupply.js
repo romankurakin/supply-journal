@@ -1,9 +1,10 @@
 import axios from "axios";
+import { arrayToObject } from "../util/arrayToObject.js";
 
 export async function getSupply() {
   try {
-    const response = await axios.get("/mock.json");
-    return response.data.supply;
+    const { data } = await axios.get("/mock.json");
+    return arrayToObject(data.supply, "id");
   } catch (error) {
     throw error;
   }

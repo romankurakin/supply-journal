@@ -11,7 +11,7 @@ const ExactNavLink = props => <Link getProps={isActive} {...props} />;
 export const NavigationMenu = () => {
   return (
     <header>
-      <Menu>
+      <Menu borderless>
         <Menu.Item>
           <Header size="medium">Журнал поставок</Header>
         </Menu.Item>
@@ -26,14 +26,16 @@ export const NavigationMenu = () => {
         </Menu.Item>
         <Menu.Menu position="right">
           <Menu.Item>
-            <Button basic>
-              <Icon name="user" />
-              Владимир Конев
-            </Button>
-            <Button>
-              <Icon name="sign-out" />
-              Выйти
-            </Button>
+            <Button.Group>
+              <Button primary>
+                <Icon name="user" />
+                Владимир Конев
+              </Button>
+              <Button>
+                <Icon name="sign-out" />
+                Выйти
+              </Button>
+            </Button.Group>
           </Menu.Item>
         </Menu.Menu>
       </Menu>

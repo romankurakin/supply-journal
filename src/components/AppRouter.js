@@ -1,15 +1,14 @@
 import React from "react";
 import { Router } from "@reach/router";
 import { Todo } from "./Todo";
-
-const Lol = () => <div>lol</div>;
+import { SupplyPage } from "./SupplyPage";
 
 // При утяжелении станиц здесь стоит сделать ленивую загрузку.
 export function AppRouter() {
   return (
     <div className="App">
       <Router>
-        <Lol path="/" />
+        <SupplyPage path="/" />
         <Todo path="/returns" />
         <Todo path="/replenishment" />
       </Router>

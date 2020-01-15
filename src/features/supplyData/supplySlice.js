@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getSupply } from "../../api/getSupply";
 
 const SupplyInitialState = {
-  supply: [],
+  supply: null,
   isLoading: false,
   error: null
 };
