@@ -2,7 +2,11 @@ import React, { useEffect, Fragment } from "react";
 import { Input, Menu, Header, Segment } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { fetchSupply, setSearchText } from "../features/supplyData/supplySlice";
+import {
+  fetchSupply,
+  setSearchText,
+  setCurrentPage
+} from "../features/supplyData/supplySlice";
 import { PaginatedTable } from "./PaginatedTable";
 
 export const SupplyPage = () => {
@@ -29,6 +33,7 @@ export const SupplyPage = () => {
                 placeholder="Данные для фильтрации"
                 onChange={e => {
                   dispatch(setSearchText(e.target.value));
+                  dispatch(setCurrentPage(1));
                 }}
               />
             </Menu.Item>
