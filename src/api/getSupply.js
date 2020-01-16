@@ -43,6 +43,8 @@ function status(s) {
     case "New":
       return "Создана";
     case "Processing":
+      return "Обработка";
+    case "Unloaded":
       return "Разгрузка началась";
     case "Done":
       return "Разгрузка окончилась";
