@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { Input, Menu, Header } from "semantic-ui-react";
-import { useDispatch } from "react-redux";
-import { fetchSupply } from "../features/supplyData/supplySlice";
+import { useDispatch, useSelector } from "react-redux";
+
+import { fetchSupply, setSearchText } from "../features/supplyData/supplySlice";
 
 export const SupplyPage = () => {
   const dispatch = useDispatch();
+  const searchText = useSelector(state => state.supplyData.searchText);
 
   useEffect(() => {
     dispatch(fetchSupply());
@@ -18,10 +20,13 @@ export const SupplyPage = () => {
       <Menu.Menu position="right">
         <Menu.Item>
           <Input
-            size="medium"
+            value={searchText}
             icon="filter"
             iconPosition="left"
             placeholder="Данные для фильтрации"
+            onChange={e => {
+              dispatch(setSearchText(e.target.value));
+            }}
           />
         </Menu.Item>
         <Menu.Item />

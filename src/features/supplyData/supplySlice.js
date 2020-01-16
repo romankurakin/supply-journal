@@ -1,10 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createSelector } from "@reduxjs/toolkit";
 import { getSupply } from "../../api/getSupply";
 
 const SupplyInitialState = {
-  supply: null,
+  supply: [],
   isLoading: false,
-  error: null
+  errorOfFetch: null,
+  searchText: ""
 };
 
 const supply = createSlice({
@@ -20,7 +21,10 @@ const supply = createSlice({
     },
     getSupplyFailed(state, { payload }) {
       state.isLoading = false;
-      state.error = payload;
+      state.errorOfFetch = payload;
+    },
+    setSearchText(state, { payload }) {
+      state.searchText = payload;
     }
   }
 });
@@ -28,7 +32,8 @@ const supply = createSlice({
 export const {
   getSupplyStart,
   getSupplySuccess,
-  getSupplyFailed
+  getSupplyFailed,
+  setSearchText
 } = supply.actions;
 
 export default supply.reducer;
@@ -42,3 +47,24 @@ export const fetchSupply = () => async dispatch => {
     dispatch(getSupplyFailed(error.toString()));
   }
 };
+
+const supplySelector = state => state.supplyData.supply;
+const searchTextSelector = state => state.supplyData.searchText;
+
+function filterByValue(array, string) {
+  return array.filter(o =>
+    Object.keys(o).some(k =>
+      String(o[k])
+        .toLowerCase()
+        .includes(string.toLowerCase())
+    )
+  );
+}
+
+export const filteredSupplySelector = createSelector(
+  supplySelector,
+  searchTextSelector,
+  (supply, searchText) => {
+    return filterByValue(supply, searchText);
+  }
+);
