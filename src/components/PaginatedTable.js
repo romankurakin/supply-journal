@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Pagination, Segment, Table } from "semantic-ui-react";
+import { Pagination, Table } from "semantic-ui-react";
 
 import { TableHeader } from "./TableHeader";
 import { TableBody } from "./TableBody";
