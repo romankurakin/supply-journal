@@ -18,11 +18,12 @@ export const SupplyPage = () => {
       <Segment>
         <Menu secondary borderless>
           <Menu.Item>
-            <Header as="h1">Список поставок</Header>
+            <Header size="large">Список поставок</Header>
           </Menu.Item>
           <Menu.Menu position="right">
             <Menu.Item>
               <Input
+                size="large"
                 value={searchText}
                 icon="filter"
                 iconPosition="left"
