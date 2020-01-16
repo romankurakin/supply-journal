@@ -21,4 +21,4 @@
 
 ## photo.jpg
 
-![photo.jpg](https://github.com/romankurakin/supply-journal/photo.jpg "photo.jpg")
+![photo.jpg](https://github.com/romankurakin/supply-journal/blob/master/photo.jpg "photo.jpg")
