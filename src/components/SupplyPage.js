@@ -23,7 +23,6 @@ export const SupplyPage = () => {
           <Menu.Menu position="right">
             <Menu.Item>
               <Input
-                size="large"
                 value={searchText}
                 icon="filter"
                 iconPosition="left"
