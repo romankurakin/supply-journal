@@ -21,11 +21,12 @@ export const PaginatedTable = () => {
 
   return (
     <Fragment>
-      <Table compact>
-        <TableHeader></TableHeader>
-        <TableBody paginatedData={paginatedData}></TableBody>
-      </Table>
-      <Segment>
+      <Segment secondary>
+        <Table compact>
+          <TableHeader></TableHeader>
+          <TableBody paginatedData={paginatedData}></TableBody>
+        </Table>
+
         <Pagination
           size="small"
           activePage={currentPage}

@@ -15,7 +15,7 @@ export const SupplyPage = () => {
 
   return (
     <Fragment>
-      <Menu secondary>
+      <Menu secondary borderless>
         <Menu.Item>
           <Header as="h1">Список поставок</Header>
         </Menu.Item>
