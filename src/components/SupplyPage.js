@@ -1,5 +1,5 @@
 import React, { useEffect, Fragment } from "react";
-import { Input, Menu, Header } from "semantic-ui-react";
+import { Input, Menu, Header, Segment } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { fetchSupply, setSearchText } from "../features/supplyData/supplySlice";
@@ -15,26 +15,28 @@ export const SupplyPage = () => {
 
   return (
     <Fragment>
-      <Menu secondary borderless>
-        <Menu.Item>
-          <Header as="h1">Список поставок</Header>
-        </Menu.Item>
-        <Menu.Menu position="right">
+      <Segment>
+        <Menu secondary borderless>
           <Menu.Item>
-            <Input
-              value={searchText}
-              icon="filter"
-              iconPosition="left"
-              placeholder="Данные для фильтрации"
-              onChange={e => {
-                dispatch(setSearchText(e.target.value));
-              }}
-            />
+            <Header as="h1">Список поставок</Header>
           </Menu.Item>
-          <Menu.Item />
-        </Menu.Menu>
-      </Menu>
-      <PaginatedTable />
+          <Menu.Menu position="right">
+            <Menu.Item>
+              <Input
+                value={searchText}
+                icon="filter"
+                iconPosition="left"
+                placeholder="Данные для фильтрации"
+                onChange={e => {
+                  dispatch(setSearchText(e.target.value));
+                }}
+              />
+            </Menu.Item>
+            <Menu.Item />
+          </Menu.Menu>
+        </Menu>
+        <PaginatedTable />
+      </Segment>
     </Fragment>
   );
 };
