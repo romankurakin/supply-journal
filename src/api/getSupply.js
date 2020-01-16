@@ -44,10 +44,12 @@ function status(s) {
       return "Создана";
     case "Processing":
       return "Обработка";
-    case "Unloaded":
+    case "Unloading":
       return "Разгрузка началась";
+    case "Unloaded":
+      return "Разгрузка закончена";
     case "Done":
-      return "Разгрузка окончилась";
+      return "Завершена";
     default:
       return s;
   }
