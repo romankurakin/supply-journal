@@ -6,7 +6,7 @@ import { SupplyPage } from "./SupplyPage";
 // При утяжелении станиц здесь стоит сделать ленивую загрузку.
 export function AppRouter() {
   return (
-    <div className="App">
+    <div>
       <Router>
         <SupplyPage path="/" />
         <Todo path="/returns" />
