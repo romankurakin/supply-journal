@@ -5,13 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchSupply,
   setSearchText,
-  setCurrentPage
+  setCurrentPage,
 } from "../features/supplyData/supplySlice";
 import { PaginatedTable } from "./PaginatedTable";
 
 export const SupplyPage = () => {
   const dispatch = useDispatch();
-  const searchText = useSelector(state => state.supplyData.searchText);
+  const searchText = useSelector((state) => state.supplyData.searchText);
 
   useEffect(() => {
     dispatch(fetchSupply());
@@ -31,7 +31,7 @@ export const SupplyPage = () => {
                 icon="filter"
                 iconPosition="left"
                 placeholder="Данные для фильтрации"
-                onChange={e => {
+                onChange={(e) => {
                   dispatch(setSearchText(e.target.value));
                   dispatch(setCurrentPage(1));
                 }}

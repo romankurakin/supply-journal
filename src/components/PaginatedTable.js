@@ -7,7 +7,7 @@ import { TableBody } from "./TableBody";
 import {
   paginatedSupplySelector,
   currentPageSelector,
-  setCurrentPage
+  setCurrentPage,
 } from "../features/supplyData/supplySlice";
 
 export const PaginatedTable = () => {

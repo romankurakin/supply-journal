@@ -6,7 +6,7 @@ const SupplyInitialState = {
   isLoading: false,
   errorOfFetch: null,
   searchText: "",
-  currentPage: 1
+  currentPage: 1,
 };
 
 const supply = createSlice({
@@ -29,8 +29,8 @@ const supply = createSlice({
     },
     setCurrentPage(state, { payload }) {
       state.currentPage = payload;
-    }
-  }
+    },
+  },
 });
 
 export const {
@@ -38,12 +38,12 @@ export const {
   getSupplySuccess,
   getSupplyFailed,
   setSearchText,
-  setCurrentPage
+  setCurrentPage,
 } = supply.actions;
 
 export default supply.reducer;
 
-export const fetchSupply = () => async dispatch => {
+export const fetchSupply = () => async (dispatch) => {
   try {
     dispatch(getSupplyStart());
     const supply = await getSupply();
@@ -53,13 +53,13 @@ export const fetchSupply = () => async dispatch => {
   }
 };
 
-const supplySelector = state => state.supplyData.supply;
-const searchTextSelector = state => state.supplyData.searchText;
+const supplySelector = (state) => state.supplyData.supply;
+const searchTextSelector = (state) => state.supplyData.searchText;
 
 function filterByValue(array, string) {
-  return array.filter(o => {
+  return array.filter((o) => {
     // eslint-disable-next-line array-callback-return
-    return Object.keys(o).some(k => {
+    return Object.keys(o).some((k) => {
       if (typeof o[k] === "string")
         return o[k].toLowerCase().includes(string.toLowerCase());
     });
@@ -71,10 +71,10 @@ export const filteredSupplySelector = createSelector(
   searchTextSelector,
   (supply, searchText) => {
     return filterByValue(supply, searchText);
-  }
+  },
 );
 
-export const currentPageSelector = state => state.supplyData.currentPage;
+export const currentPageSelector = (state) => state.supplyData.currentPage;
 
 export const paginatedSupplySelector = createSelector(
   filteredSupplySelector,
@@ -83,7 +83,7 @@ export const paginatedSupplySelector = createSelector(
     const offset = (currentPage - 1) * 25;
     return {
       totalPages: Math.ceil(filteredSupply.length / 25),
-      paginatedData: filteredSupply.slice(offset, offset + 25)
+      paginatedData: filteredSupply.slice(offset, offset + 25),
     };
-  }
+  },
 );

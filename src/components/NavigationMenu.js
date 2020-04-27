@@ -6,7 +6,7 @@ const isActive = ({ isCurrent }) => {
   return isCurrent ? { className: "active item" } : null;
 };
 
-const ExactNavLink = props => <Link getProps={isActive} {...props} />;
+const ExactNavLink = (props) => <Link getProps={isActive} {...props} />;
 
 export const NavigationMenu = () => {
   return (

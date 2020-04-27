@@ -2,7 +2,7 @@ import React from "react";
 import { Table } from "semantic-ui-react";
 
 export const TableBody = ({ paginatedData }) => {
-  const listRow = paginatedData.map(item => (
+  const listRow = paginatedData.map((item) => (
     <Table.Row key={item.id}>
       <Table.Cell>{item.id}</Table.Cell>
       <Table.Cell>{item.warehouse}</Table.Cell>

@@ -9,7 +9,7 @@ export const Todo = () => {
         alignItems: "center",
         justifyContent: "center",
         height: "310px",
-        marginTop: "2rem"
+        marginTop: "2rem",
       }}
     >
       <svg
