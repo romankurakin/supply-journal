@@ -29,16 +29,14 @@ export const SupplyPage = () => {
             <Menu.Item>
               <Input
                 value={searchText}
-                icon="filter"
-                iconPosition="left"
-                placeholder="Данные для фильтрации"
+                label="Поиск по поставкам"
+                size="large"
                 onChange={(e) => {
                   dispatch(setSearchText(e.target.value));
                   dispatch(setCurrentPage(1));
                 }}
               />
             </Menu.Item>
-            <Menu.Item />
           </Menu.Menu>
         </Menu>
         <PaginatedTable />

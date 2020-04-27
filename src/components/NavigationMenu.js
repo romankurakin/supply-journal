@@ -12,22 +12,19 @@ export const NavigationMenu = () => {
   return (
     <header>
       <Menu borderless>
-        <Menu.Item>
-          <Header size="medium">Журнал поставок</Header>
-        </Menu.Item>
         <Menu.Item as={ExactNavLink} to="/">
-          <Header size="small">Данные о поставках</Header>
+          <Header>Данные о поставках</Header>
         </Menu.Item>
         <Menu.Item as={ExactNavLink} to="/returns">
-          <Header size="small">Возвраты поставщикам</Header>
+          <Header>Возвраты поставщикам</Header>
         </Menu.Item>
         <Menu.Item as={ExactNavLink} to="/replenishment">
-          <Header size="small">Репленишмент</Header>
+          <Header>Репленишмент</Header>
         </Menu.Item>
         <Menu.Menu position="right">
           <Menu.Item>
             <Button.Group>
-              <Button primary>
+              <Button color="blue">
                 <Icon name="user" />
                 Владимир Конев
               </Button>
