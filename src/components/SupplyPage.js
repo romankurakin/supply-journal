@@ -6,12 +6,13 @@ import {
   fetchSupply,
   setSearchText,
   setCurrentPage,
-} from "../features/supplyData/supplySlice";
+  searchTextSelector,
+} from "../features/supply/supplySlice";
 import { PaginatedTable } from "./PaginatedTable";
 
 export const SupplyPage = () => {
   const dispatch = useDispatch();
-  const searchText = useSelector((state) => state.supplyData.searchText);
+  const searchText = useSelector(searchTextSelector);
 
   useEffect(() => {
     dispatch(fetchSupply());

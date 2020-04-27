@@ -8,11 +8,11 @@ import {
   paginatedSupplySelector,
   currentPageSelector,
   setCurrentPage,
-} from "../features/supplyData/supplySlice";
+} from "../features/supply/supplySlice";
 
 export const PaginatedTable = () => {
   const dispatch = useDispatch();
-  const { totalPages, paginatedData } = useSelector(paginatedSupplySelector);
+  const { totalPages, paginatedSupply } = useSelector(paginatedSupplySelector);
   const currentPage = useSelector(currentPageSelector);
 
   const handlePaginationChange = (_e, { activePage }) => {
@@ -23,7 +23,7 @@ export const PaginatedTable = () => {
     <Fragment>
       <Table size="small">
         <TableHeader></TableHeader>
-        <TableBody paginatedData={paginatedData}></TableBody>
+        <TableBody paginatedData={paginatedSupply}></TableBody>
       </Table>
       <Pagination
         size="small"

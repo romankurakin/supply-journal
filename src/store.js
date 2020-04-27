@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import supplyDataReducer from "./features/supplyData/supplySlice";
+import supplyReducer from "./features/supply/supplySlice";
 
 export const store = configureStore({
-  reducer: { supplyData: supplyDataReducer },
+  reducer: { supply: supplyReducer },
 });

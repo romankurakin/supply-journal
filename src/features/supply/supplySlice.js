@@ -53,8 +53,8 @@ export const fetchSupply = () => async (dispatch) => {
   }
 };
 
-const supplySelector = (state) => state.supplyData.supply;
-const searchTextSelector = (state) => state.supplyData.searchText;
+const supplySelector = (state) => state.supply.supply;
+export const searchTextSelector = (state) => state.supply.searchText;
 
 function filterByValue(array, string) {
   return array.filter((o) => {
@@ -74,7 +74,7 @@ export const filteredSupplySelector = createSelector(
   },
 );
 
-export const currentPageSelector = (state) => state.supplyData.currentPage;
+export const currentPageSelector = (state) => state.supply.currentPage;
 
 export const paginatedSupplySelector = createSelector(
   filteredSupplySelector,
@@ -83,7 +83,7 @@ export const paginatedSupplySelector = createSelector(
     const offset = (currentPage - 1) * 25;
     return {
       totalPages: Math.ceil(filteredSupply.length / 25),
-      paginatedData: filteredSupply.slice(offset, offset + 25),
+      paginatedSupply: filteredSupply.slice(offset, offset + 25),
     };
   },
 );
