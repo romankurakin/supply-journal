@@ -53,15 +53,18 @@ export const fetchSupply = () => async (dispatch) => {
   }
 };
 
-const supplySelector = (state) => state.supply.supply;
+export const supplySelector = (state) => state.supply.supply;
 export const searchTextSelector = (state) => state.supply.searchText;
+export const currentPageSelector = (state) => state.supply.currentPage;
 
 function filterByValue(array, string) {
-  return array.filter((o) => {
-    // eslint-disable-next-line array-callback-return
-    return Object.keys(o).some((k) => {
-      if (typeof o[k] === "string")
-        return o[k].toLowerCase().includes(string.toLowerCase());
+  return array.filter((object) => {
+    return Object.keys(object).some((key) => {
+      if (typeof object[key] === "string") {
+        return object[key].toLowerCase().includes(string.toLowerCase());
+      } else {
+        return false;
+      }
     });
   });
 }
@@ -73,8 +76,6 @@ export const filteredSupplySelector = createSelector(
     return filterByValue(supply, searchText);
   },
 );
-
-export const currentPageSelector = (state) => state.supply.currentPage;
 
 export const paginatedSupplySelector = createSelector(
   filteredSupplySelector,
