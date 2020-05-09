@@ -49,7 +49,7 @@ export const fetchSupply = () => async (dispatch) => {
     const supply = await getSupply();
     dispatch(getSupplySuccess(supply));
   } catch (error) {
-    dispatch(getSupplyFailed(error.toString()));
+    dispatch(getSupplyFailed(error));
   }
 };
 
